@@ -1,0 +1,4 @@
+apiVersion: v2
+name: service-a
+description: Second service
+version: 0.1.0

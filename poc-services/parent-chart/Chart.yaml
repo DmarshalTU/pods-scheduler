@@ -1,0 +1,11 @@
+apiVersion: v2
+name: parent-chart
+description: Parent chart for POC services
+version: 0.1.0
+dependencies:
+  - name: service-a
+    version: "0.1.0"
+    repository: "file://../service-a"
+  - name: service-b
+    version: "0.1.0"
+    repository: "file://../service-b"
