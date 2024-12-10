@@ -1,4 +1,4 @@
 apiVersion: v2
-name: service-a
+name: service-b
 description: Second service
 version: 0.1.0

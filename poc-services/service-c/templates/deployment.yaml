@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: service-c
   annotations:
-    helm.sh/hook-weight: "1"
+    helm.sh/hook-weight: "2"
 spec:
   replicas: 1
   selector:
