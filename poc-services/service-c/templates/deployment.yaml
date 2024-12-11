@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: service-c
-  annotations:
-    helm.sh/hook-weight: "2"
 spec:
   replicas: 1
   selector:
@@ -15,12 +13,12 @@ spec:
         app: service-c
     spec:
       initContainers:
-      - name: wait-for-a
+      - name: wait-for-b
         image: busybox:1.28
         command: ['sh', '-c', 'until wget -qO- http://service-b/health; do echo waiting for service-a; sleep 2; done;']
       containers:
       - name: service-c
-        image: nginx:alpine
+        image: dmarshaltu/pocsimple:latest
         ports:
         - containerPort: 80
         readinessProbe:

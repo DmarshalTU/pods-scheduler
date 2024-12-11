@@ -9,3 +9,6 @@ dependencies:
   - name: service-b
     version: "0.1.0"
     repository: "file://../service-b"
+  - name: service-c
+    version: "0.1.0"
+    repository: "file://../service-c"

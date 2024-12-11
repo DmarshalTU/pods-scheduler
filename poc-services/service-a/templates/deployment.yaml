@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: service-a
-  annotations:
-    helm.sh/hook-weight: "0"
 spec:
   replicas: 1
   selector:
@@ -16,7 +14,7 @@ spec:
     spec:
       containers:
       - name: service-a
-        image: nginx:alpine
+        image: dmarshaltu/pocsimple:latest
         ports:
         - containerPort: 80
         readinessProbe:

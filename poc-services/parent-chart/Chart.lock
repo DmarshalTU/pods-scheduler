@@ -1,0 +1,12 @@
+dependencies:
+- name: service-a
+  repository: file://../service-a
+  version: 0.1.0
+- name: service-b
+  repository: file://../service-b
+  version: 0.1.0
+- name: service-c
+  repository: file://../service-c
+  version: 0.1.0
+digest: sha256:17f462222859b5e74b5f710d1e107f8a49da943a81745ec3e1d83fb5fd02779c
+generated: "2024-12-10T13:59:30.304876+02:00"
