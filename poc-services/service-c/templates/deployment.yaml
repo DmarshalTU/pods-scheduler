@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   {{ include "helm.fullname" . }}
-  annotations:
-    helm.sh/hook-weight: "2"
 spec:
   replicas: 1
   selector:
@@ -17,7 +15,7 @@ spec:
       {{- include "service.initContainers" . | nindent 6 }}
       containers:
       - name: service-c
-        image: nginx:alpine
+        image: dmarshaltu/pocsimple:latest
         ports:
         - containerPort: 80
         readinessProbe:
