@@ -1,0 +1,3 @@
+dependencies: []
+initContainers:
+  enabled: false  # disable init containers for first service

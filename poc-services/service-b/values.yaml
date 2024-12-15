@@ -1,0 +1,7 @@
+dependencies: ["service-a"]
+initContainers:
+  enabled: true
+  containers:
+    image: busybox:1.28
+    healthCheckPort: 8083
+    retryInterval: 2

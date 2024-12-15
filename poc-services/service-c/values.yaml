@@ -1,0 +1,2 @@
+dependencies: ["service-a", "service-b"]
+# Will use default initContainers config

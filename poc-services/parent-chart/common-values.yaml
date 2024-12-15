@@ -1,0 +1,14 @@
+dependencies:
+  services:
+    ums: false    # first service, no dependencies
+    ocs: ["ums"]  # depends on ums
+    uss: ["ums", "ocs"]  # depends on ums and ocs
+    oms: ["ums", "ocs", "uss"]  # depends on previous services
+    sms: ["ums", "ocs", "uss", "oms"]  # depends on all previous services
+  defaultConfig:
+    initContainers:
+      enabled: true
+      containers:
+        image: busybox:1.28
+        healthCheckPort: 8083
+        retryInterval: 2

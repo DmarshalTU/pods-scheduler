@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-c
+  {{ include "helm.fullname" . }}
   annotations:
     helm.sh/hook-weight: "2"
 spec:
@@ -14,10 +14,7 @@ spec:
       labels:
         app: service-c
     spec:
-      initContainers:
-      - name: wait-for-a
-        image: busybox:1.28
-        command: ['sh', '-c', 'until wget -qO- http://service-b/health; do echo waiting for service-a; sleep 2; done;']
+      {{- include "service.initContainers" . | nindent 6 }}
       containers:
       - name: service-c
         image: nginx:alpine

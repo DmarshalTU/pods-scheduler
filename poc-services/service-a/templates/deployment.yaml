@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-a
+  name: {{ include "helm.fullname" . }}
   annotations:
     helm.sh/hook-weight: "0"
 spec:
@@ -14,6 +14,7 @@ spec:
       labels:
         app: service-a
     spec:
+      {{- include "service.initContainers" . | nindent 6 }}
       containers:
       - name: service-a
         image: nginx:alpine
