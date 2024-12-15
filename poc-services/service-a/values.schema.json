@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "dependencies": {
+        "type": "array",
+        "maxItems": 0,
+        "description": "UMS is the first service and should have no dependencies"
+      },
+      "initContainers": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "Should be false as UMS is the first service"
+          }
+        }
+      }
+    }
+  }
